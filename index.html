@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dispositivos Domóticos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 20px;
+        }
+        article {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+        p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #666;
+            text-align: center;
+        }
+        .price {
+            font-weight: bold;
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .cart {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .cart h2 {
+            font-size: 20px;
+            margin-top: 0;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .cart-items {
+            list-style-type: none;
+            padding: 0;
+        }
+        .cart-item {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .cart-item p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #333;
+        }
+        .cart-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* Tamaño de las imágenes */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dispositivos Domóticos</h1>
+    </header>
+    <div class="container">
+        <article>
+            <h2>Iluminacion inteligente</h2>
+            <img src="https://www.gyptech.com.do/wp-content/uploads/bombilla-ren-e1648566312602.jpg" alt="Dispositivo 1">
+            <p>Esto es una tecnología diseñada para mejorar la eficiencia energética, la comodidad, así como la seguridad y como su nombre lo indica permite controlar las luces del entorno con las medidas más simples por medio de comandos de voz</p>
+            <p class="price">Precio: $35,76</p>
+            <button onclick="addToCart('Iluminacion inteligente', 35.76)">Agregar al carrito</button>
+        </article>
+        <!-- Agregar más artículos aquí -->
+        <article>
+            <h2>Camara de Seguridad</h2>
+            <img src="https://http2.mlstatic.com/D_NQ_NP_977277-MLV73773952417_012024-O.webp" alt="Dispositivo 2">
+            <p>Este sistema de cámara de seguridad sirve para monitorear y tener un registro de las actividades de las personas en una vivienda o negocio. La cámara de vigilancia puede estar oculta en el interior de la vivienda o instalada al aire libre y permite recopilar pruebas de posibles delitos o robos</p>
+            <p class="price">Precio: $150.56</p>
+            <button onclick="addToCart('Camara de seguridad', 150.56)">Agregar al carrito</button>
+        </article>
+        <article>
+            <h2>Sistemas de climatización</h2>
+            <img src="https://img.edilportale.com/product-thumbs/h_20VENTI-Home-automation-system-EKINEX-595425-relcd793380.png" alt="Dispositivo 3">
+            <p>Este permite un conjunto de acciones y medidas destinadas a regular y optimizar las condiciones ambientales dentro de cada uno de los espacios de una casa</p>
+            <p class="price">Precio: $80,01</p>
+            <button onclick="addToCart('Sistema de climatizacion', 80.01)">Agregar al carrito</button>
+        </article>
+        <article>
+            <h2>Toma corriente inteligente</h2>
+            <img src="https://i5.walmartimages.com.mx/mg/gm/3pp/asr/5e8af2d9-09bd-45a5-a97f-a9a90c80c4a5.063bdab53bca307b6a80cb152b591cc3.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" alt="Dispositivo 4">
+            <p>Los enchufes inteligentes permiten controlar tus dispositivos de forma remota mediante una aplicación creada por el proveedor. Muchos de estos smart plugs dan la posibilidad de predeterminar horarios de encendido y apagado; otros cuentan con un temporizador de apagado automático en función de una duración escogida.</p>
+            <p class="price">Precio: $28.98</p>
+            <button onclick="addToCart('Toma corriente inteligente', 28.98)">Agregar al carrito</button>
+        </article>
+        <article>
+            <h2>Sensor de Humo</h2>
+            <img src="https://i5.walmartimages.com.mx/mg/gm/3pp/asr/0a5f9383-e16c-4a38-9e8f-d141f04cc32b.53226d3dd31176ecf5c6b58306a7a455.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" alt="Dispositivo 5">
+            <p>Los sensores de humo y gas son equipos que previenen de riesgos potenciales que pueden producirse dentro de una vivienda, debido a la presencia de gases tóxicos o inflamables. Detectan cualquier emisión de gas o la presencia de humo.</p>
+            <p class="price">Precio: $29.99</p>
+            <button onclick="addToCart('Sensor de humo', 29.99)">Agregar al carrito</button>
+        </article>
+        <article>
+            <h2>Panel Solar</h2>
+            <img src="https://d1cft8rz0k7w99.cloudfront.net/n/0/1/7/a/017a0429ea2cbed7077f758f3ba9dd6aab67289c_ElectricalEquipment_422603_01.jpg" alt="Dispositivo 6">
+            <p>Los paneles solares son el intermediario que hace que la luz solar nos sirva de energía. Su diseño es simple, muy eficaz y permite el autoconsumo, lo que fomenta la sostenibilidad.</p>
+            <p class="price">Precio: $250.78</p>
+            <button onclick="addToCart('Panel solar', 199.99)">Agregar al carrito</button>
+        </article>
+        <article>
+            <h2>Dispositivo de Alexa</h2>
+            <img src="https://kcsolutions.com.do/wp-content/uploads/2022/12/Alexa-tercera-gen.jpg" alt="Dispositivo 7">
+            <p>La integración de Alexa te permite escuchar música, leer las noticias, consultar el clima, hacer listas, programar temporizadores, controlar tu hogar inteligente y mucho más. Solo tienes que pedirlo. Alexa mejora constantemente y lanzaremos nuevas funciones con las próximas actualizaciones de software.</p>
+            <p class="price">Precio: $50.01</p>
+            <button onclick="addToCart('Alexa', 50.01)">Agregar al carrito</button>
+        </article>
+        <article>
+            <h2>Breaker digital</h2>
+            <img src="https://ae01.alicdn.com/kf/Hea94d463ef46433fa899cba1bebd47227.jpg_640x640Q90.jpg_.webp" alt="Dispositivo 8">
+            <p>Este Breaker digital permite la automatizacion y el control de la energia de tu hogar </p>
+            <p class="price">Precio: $45.99</p>
+            <button onclick="addToCart('Breaker digital', 45.99)">Agregar al carrito</button>
+        </article>
+        <article>
+            <h2>Cerradura Digital</h2>
+            <img src="https://www.gsmpro.cl/cdn/shop/products/gyrux-cerradura-digital-para-puertas-a220.jpg?v=1670442494" alt="Dispositivo 9">
+            <p>Las cerraduras electrónicas es una evolución de las cerraduras tradicionales, que aprovechándose de la corriente eléctrica y/o de una batería propia, permite cerrar y abrir una puerta de forma mucho más segura y cómoda</p>
+            <p class="price">Precio: $95.03</p>
+            <button onclick="addToCart('Cerradura Digital', 95.03)">Agregar al carrito</button>
+        </article>
+        <article>
+            <h2>Smart Touch</h2>
+            <img src="https://image.made-in-china.com/202f0j00LYMUFCAySnpq/No-Neutral-No-Capacitor-Tuya-Zigbee-3-0-Smart-Touch-Home-Switch-Wall-Light-Switches-Interruptor-WiFi.webp" alt="Dispositivo 10">
+            <p>El smart touch tiene la funcionalidad de encender las luces de manera remota y colocar temporizador para el encendido y el apagado de las luces </p>
+            <p class="price">Precio: $30.00</p>
+            <button onclick="addToCart('Smart touch', 30.00)">Agregar al carrito</button>
+        </article>
+    </div>
+
+    <div class="cart">
+        <h2>Carrito de Compras</h2>
+        <ul class="cart-items" id="cart-items"></ul>
+        <div class="cart-buttons">
+            <button onclick="pay()">Pagar</button>
+            <button onclick="clearCart()">Vaciar Carrito</button>
+        </div>
+    </div>
+
+    <script>
+        var cartItems = [];
+
+        function addToCart(itemName, itemPrice) {
+            cartItems.push({ name: itemName, price: itemPrice });
+            displayCartItems();
+        }
+
+        function displayCartItems() {
+            var cartItemsElement = document.getElementById('cart-items');
+            cartItemsElement.innerHTML = '';
+            cartItems.forEach(function(item) {
+                var newItem = document.createElement('li');
+                newItem.classList.add('cart-item');
+                newItem.innerHTML = `
+                    <p>${item.name} - Precio: $${item.price}</p>
+                `;
+                cartItemsElement.appendChild(newItem);
+            });
+        }
+
+        function pay() {
+            var totalPrice = 0;
+            cartItems.forEach(function(item) {
+                totalPrice += item.price;
+            });
+            alert('Total a pagar: $' + totalPrice);
+        }
+
+        function clearCart() {
+            cartItems = [];
+            displayCartItems();
+        }
+    </script>
+</body>
+</html>
